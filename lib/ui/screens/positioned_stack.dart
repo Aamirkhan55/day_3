@@ -1,8 +1,7 @@
-import 'package:day_3/ui/screens/positioned_stack.dart';
 import 'package:flutter/material.dart';
 
-class StackScreen extends StatelessWidget {
-  const StackScreen({super.key});
+class PositionedStack extends StatelessWidget {
+  const PositionedStack({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -26,11 +25,11 @@ class StackScreen extends StatelessWidget {
             const Padding(
              padding: EdgeInsets.symmetric(horizontal: 30, vertical: 30),
               child: Text(
-                'Non Position Stack',
+                'Position Stack',
                 style: TextStyle(
                   color: Colors.black,
                   fontSize: 25,
-                  fontWeight: FontWeight.w500,
+                  fontWeight: FontWeight.bold,
                 ),
                 ),
             ),
@@ -41,37 +40,41 @@ class StackScreen extends StatelessWidget {
                     height: 300,
                     width: 200,
                     decoration: BoxDecoration(
-                      color: Colors.deepPurple[200],
+                      color: Colors.green[300],
                       borderRadius: BorderRadius.circular(15),
                     ),
                   ),
-                    Container(
-                    height: 250,
-                    width: 170,
-                    decoration: BoxDecoration(
-                      color: Colors.amber[100],
-                      borderRadius: BorderRadius.circular(15),
+                    Positioned(
+                      left: 12,
+                      top: 16,
+                      child: Container(
+                      height: 250,
+                      width: 170,
+                      decoration: BoxDecoration(
+                        color: Colors.amber[200],
+                        borderRadius: BorderRadius.circular(15),
+                      ),
+                       ),
                     ),
-                  ),
-                    Container(
-                    height: 200,
-                    width: 130,
-                    decoration: BoxDecoration(
-                      color: Colors.lime[200],
-                      borderRadius: BorderRadius.circular(15),
+                    Positioned(
+                      top: 60,
+                      right: 50,
+                      bottom: 60,
+                      left: 50,
+                      child: Container(
+                      height: 200,
+                      width: 130,
+                      decoration: BoxDecoration(
+                        color: Colors.deepPurple[200],
+                        borderRadius: BorderRadius.circular(15),
+                      ),
+                                      ),
                     ),
-                  ),
                 ],
               ),
             ),
           ],
         ),
-        floatingActionButton: FloatingActionButton(
-          onPressed: () {
-            Navigator.push(context, MaterialPageRoute(builder: (context) => const PositionedStack() ));
-          },
-          child: const Icon(Icons.arrow_forward_ios),
-          ),
       ),
     );
   }
